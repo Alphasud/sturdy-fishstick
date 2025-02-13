@@ -1,8 +1,8 @@
 {
-  "name": "my_personnal_website",
+  "name": "personnal_website",
   "version": "1.0.0",
   "private": true,
-  "description": "my_personnal_website",
+  "description": "Personnal website",
   "author": "alphasud",
   "keywords": [
     "gatsby"
