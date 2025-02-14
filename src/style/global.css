@@ -21,10 +21,50 @@ a {
 .audio_player {
 	display: flex;
 	align-items: center;
-	gap: 1rem;
+	justify-content: space-between;
+	gap: 0.5rem;
 	padding: 10px;
 	border: 1px solid white;
 	border-radius: 10px;
+	font-size: 0.75rem;
+}
+.now_playing {
+	display: flex;
+	align-items: center;
+	white-space: nowrap;
+	color: white;
+	gap: 5px; /* Space between "Now Playing" and moving text */
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.marquee {
+	overflow: hidden;
+	flex: 1; /* Takes remaining space */
+	position: relative;
+}
+
+.player_link {
+	display: flex;
+	width: max-content; /* Prevents text cutting */
+	animation: marquee 10s linear infinite;
+}
+
+.player_link span {
+	display: inline-block;
+	padding-right: 10px; /* Space between repeated text */
+	white-space: nowrap;
+}
+
+/* Jitter-free scroll effect */
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
 }
 input[type='range'] {
 	-webkit-appearance: none;
@@ -110,7 +150,7 @@ input[type='range']::-moz-range-thumb {
 	padding-right: 20px;
 }
 .grid_audio_player {
-	grid-area: 1 / 1 / 2 / 2;
+	grid-area: 1 / 1 / 2 / 3;
 	padding-top: 20px;
 	padding-left: 20px;
 }

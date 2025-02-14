@@ -5,6 +5,7 @@ import Socials from './Socials';
 import AudioPlayer from './AudioPlayer';
 import useParallax from '../hooks/useParallax';
 import { StaticImage } from 'gatsby-plugin-image';
+import Footer from './Footer';
 
 const TextGrid: React.FC = () => {
 	const { heading, description, footer } = useTexts();
@@ -38,18 +39,7 @@ const TextGrid: React.FC = () => {
 				<AudioPlayer />
 			</div>
 			<div className="grid_footer">
-				<small>
-					{footer.by}{' '}
-					<cite>
-						<a
-							target="_blank"
-							href="https://www.nts.live/infinite-mixtapes/slow-focus"
-						>
-							{footer.name}
-						</a>
-					</cite>
-					. {footer.rights}
-				</small>
+				<Footer />
 			</div>
 		</div>
 	);

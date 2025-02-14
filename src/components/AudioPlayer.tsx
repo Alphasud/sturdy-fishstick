@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react';
+import { useTexts } from '../context/TextProvider';
+import MarqueeLink from './MarqueeLink';
 
 const buttonStyles: React.CSSProperties = {
 	background: 'none',
@@ -10,6 +12,7 @@ const CustomAudioPlayer = () => {
 	const audioRef = useRef<HTMLAudioElement>(null);
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [volume, setVolume] = useState(0.5);
+	const { player } = useTexts();
 
 	const togglePlay = () => {
 		if (audioRef.current) {
@@ -84,6 +87,10 @@ const CustomAudioPlayer = () => {
 						</svg>
 					)}
 				</button>
+				<div className="now_playing">
+					<span>{player.nowPlaying}:</span>
+					<MarqueeLink title={player.title} link={player.link} />
+				</div>
 				<div style={{ display: 'flex', alignItems: 'center' }}>
 					<button style={buttonStyles} onClick={toggleSound}>
 						{volume === 0 ? (
