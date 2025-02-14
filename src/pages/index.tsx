@@ -1,9 +1,7 @@
 import * as React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
 import BackgroundNoise from '../components/BackgroundNoise';
-import BackgroundImage from '../components/BackgroundImage';
-import useParallax from '../hooks/useParallax';
-import TextGrid from '../components/TextsGrid';
+import Grid from '../components/Grid';
 import { TextProvider } from '../context/TextProvider';
 
 const pageStyles: React.CSSProperties = {
@@ -14,13 +12,12 @@ const pageStyles: React.CSSProperties = {
 };
 
 const IndexPage: React.FC<PageProps> = () => {
-	const { offset } = useParallax(50);
 	const [loading, setLoading] = React.useState(true);
 
 	React.useEffect(() => {
 		const timer = setTimeout(() => {
 			setLoading(false);
-		}, 1500);
+		}, 2000);
 
 		return () => clearTimeout(timer);
 	}, []);
@@ -34,9 +31,8 @@ const IndexPage: React.FC<PageProps> = () => {
 					visibility: loading ? 'hidden' : 'visible',
 				}}
 			>
-				<BackgroundImage offset={offset} />
 				<TextProvider>
-					<TextGrid />
+					<Grid />
 				</TextProvider>
 			</div>
 		</main>

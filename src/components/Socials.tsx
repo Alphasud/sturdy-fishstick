@@ -2,17 +2,7 @@ import React from 'react';
 
 const Icons = () => {
 	return (
-		<div
-			style={{
-				display: 'flex',
-				alignItems: 'center',
-				justifyContent: 'space-around',
-				gap: '10px',
-				border: '1px solid #fff',
-				borderRadius: '10px',
-				padding: '10px',
-			}}
-		>
+		<div className="icons">
 			<a href="https://github.com/Alphasud" target="_blank">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

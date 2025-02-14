@@ -39,7 +39,7 @@ const BackgroundNoise: React.FC<BackgroundNoiseProps> = ({ opacity = 1 }) => {
 		<canvas
 			id="noise"
 			style={{
-				position: 'fixed',
+				position: 'absolute',
 				top: 0,
 				left: 0,
 				width: '100%',

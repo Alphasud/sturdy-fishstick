@@ -44,16 +44,7 @@ const CustomAudioPlayer = () => {
 
 	return (
 		<>
-			<div
-				style={{
-					display: 'flex',
-					alignItems: 'center',
-					gap: '1rem',
-					padding: '10px',
-					border: '1px solid white',
-					borderRadius: '10px',
-				}}
-			>
+			<div className="audio_player">
 				<audio
 					ref={audioRef}
 					src="https://stream-mixtape-geo.ntslive.net/mixtape/64.aac"
