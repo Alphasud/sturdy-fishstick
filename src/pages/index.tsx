@@ -3,6 +3,8 @@ import type { HeadFC, PageProps } from 'gatsby';
 import BackgroundNoise from '../components/BackgroundNoise';
 import GridLayout from '../layout/GridLayout';
 import { TextProvider } from '../context/TextProvider';
+import GhostTrailCursor from '../components/GhostTrailCursor';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const pageStyles: React.CSSProperties = {
 	width: '100%',
@@ -24,6 +26,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
 	return (
 		<main style={pageStyles}>
+			<GhostTrailCursor />
 			<BackgroundNoise opacity={!loading ? 0.125 : 1} />
 			<div
 				style={{

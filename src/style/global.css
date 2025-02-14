@@ -5,6 +5,7 @@ body {
 	padding: 0;
 	font-family: Roboto Mono, monospace;
 	background-color: #141414;
+	cursor: url('../images/cursor.svg') 16 16, auto;
 }
 a {
 	text-decoration: underline;
@@ -57,14 +58,11 @@ a {
 	white-space: nowrap;
 }
 
-/* Jitter-free scroll effect */
-@keyframes marquee {
-	from {
-		transform: translateX(0);
-	}
-	to {
-		transform: translateX(-50%);
-	}
+.player_link span:hover {
+	animation-play-state: paused; /* Stop animation on hover */
+	color: #fff;
+	text-align: center;
+	animation: glow 1s ease-in-out infinite alternate;
 }
 input[type='range'] {
 	-webkit-appearance: none;
@@ -111,6 +109,19 @@ input[type='range']::-moz-range-thumb {
 	height: 30rem;
 	opacity: 0.75;
 }
+.cursor-ghost {
+	position: fixed;
+	width: 20px;
+	height: 20px;
+	background: transparent;
+	pointer-events: none;
+	transform: translate(-50%, -50%);
+	opacity: 1;
+	animation: cursor-trail-animation 0.3s ease-out forwards;
+	z-index: 9999;
+}
+
+/* GRID LAYOUT */
 .grid {
 	position: absolute;
 	width: 100%;
@@ -136,10 +147,12 @@ input[type='range']::-moz-range-thumb {
 	background-color: transparent;
 }
 .grid_heading {
+	transition: transform 0.25s ease-out;
 	grid-area: 2 / 2 / 3 / 7;
 	align-self: center;
 }
 .grid_description {
+	transition: transform 0.25s ease-out;
 	grid-area: 3 / 2 / 4 / 7;
 	align-self: center;
 }
@@ -225,5 +238,37 @@ input[type='range']::-moz-range-thumb {
 	.grid_audio_player {
 		grid-area: 5 / 1 / 6 / 2;
 		align-self: end;
+	}
+}
+
+/* ANIMATIONS */
+@keyframes glow {
+	from {
+		text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073,
+			0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073,
+			0 0 70px #e60073;
+	}
+	to {
+		text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6,
+			0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6,
+			0 0 80px #ff4da6;
+	}
+}
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+@keyframes cursor-trail-animation {
+	0% {
+		transform: scale(1);
+		opacity: 0.6;
+	}
+	100% {
+		transform: scale(1.5);
+		opacity: 0;
 	}
 }

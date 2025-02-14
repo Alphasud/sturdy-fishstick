@@ -10,12 +10,15 @@ import Footer from '../components/Footer';
 const GridLayout: React.FC = () => {
 	const { heading, description, footer } = useTexts();
 	const { offset } = useParallax(50);
-	const divStyles: React.CSSProperties = {
+	const backgroundStyles: React.CSSProperties = {
 		transform: `translate(${offset.x}px, ${offset.y}px)`,
+	};
+	const textStyles: React.CSSProperties = {
+		transform: `translate(${-offset.x}px, ${-offset.y}px)`,
 	};
 	return (
 		<div className="grid">
-			<div className="grid_background" style={divStyles}>
+			<div className="grid_background" style={backgroundStyles}>
 				<StaticImage
 					src="../images/computer.webp"
 					alt="an pixel art style drawing of a restro computer"
@@ -25,10 +28,10 @@ const GridLayout: React.FC = () => {
 					backgroundColor="transparent"
 				/>
 			</div>
-			<div className="grid_heading">
+			<div className="grid_heading" style={textStyles}>
 				<Text content={heading} />
 			</div>
-			<div className="grid_description">
+			<div className="grid_description" style={textStyles}>
 				<Text content={description} />
 			</div>
 
