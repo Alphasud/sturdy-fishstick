@@ -1,7 +1,7 @@
 import * as React from 'react';
 import type { HeadFC, PageProps } from 'gatsby';
 import BackgroundNoise from '../components/BackgroundNoise';
-import Grid from '../components/Grid';
+import GridLayout from '../layout/GridLayout';
 import { TextProvider } from '../context/TextProvider';
 
 const pageStyles: React.CSSProperties = {
@@ -32,7 +32,7 @@ const IndexPage: React.FC<PageProps> = () => {
 				}}
 			>
 				<TextProvider>
-					<Grid />
+					<GridLayout />
 				</TextProvider>
 			</div>
 		</main>

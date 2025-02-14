@@ -1,13 +1,13 @@
 import React from 'react';
-import Text from './Text';
+import Text from '../components/Text';
 import { useTexts } from '../context/TextProvider';
-import Socials from './Socials';
-import AudioPlayer from './AudioPlayer';
+import Socials from '../components/Socials';
+import AudioPlayer from '../components/AudioPlayer';
 import useParallax from '../hooks/useParallax';
 import { StaticImage } from 'gatsby-plugin-image';
-import Footer from './Footer';
+import Footer from '../components/Footer';
 
-const TextGrid: React.FC = () => {
+const GridLayout: React.FC = () => {
 	const { heading, description, footer } = useTexts();
 	const { offset } = useParallax(50);
 	const divStyles: React.CSSProperties = {
@@ -45,4 +45,4 @@ const TextGrid: React.FC = () => {
 	);
 };
 
-export default TextGrid;
+export default GridLayout;
