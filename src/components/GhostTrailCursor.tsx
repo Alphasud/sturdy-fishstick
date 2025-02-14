@@ -18,8 +18,8 @@ const CursorTrail = () => {
 			const svgElement = trailElement.firstChild as SVGElement;
 
 			svgElement.style.position = 'absolute';
-			svgElement.style.width = '32px';
-			svgElement.style.height = '32px';
+			svgElement.style.width = '23px';
+			svgElement.style.height = '23px';
 			svgElement.style.pointerEvents = 'none';
 			svgElement.style.left = `${e.pageX - 16}px`;
 			svgElement.style.top = `${e.pageY - 16}px`;

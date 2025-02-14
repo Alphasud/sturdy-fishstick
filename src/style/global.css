@@ -19,6 +19,9 @@ a {
 	text-align: center;
 	font-size: 3rem;
 }
+.glow {
+	animation: glow 1s ease-in-out infinite alternate;
+}
 .audio_player {
 	display: flex;
 	align-items: center;
@@ -34,7 +37,7 @@ a {
 	align-items: center;
 	white-space: nowrap;
 	color: white;
-	gap: 5px; /* Space between "Now Playing" and moving text */
+	gap: 5px;
 	overflow: hidden;
 	position: relative;
 	width: 100%;
@@ -42,27 +45,26 @@ a {
 
 .marquee {
 	overflow: hidden;
-	flex: 1; /* Takes remaining space */
+	flex: 1;
 	position: relative;
 }
 
 .player_link {
 	display: flex;
-	width: max-content; /* Prevents text cutting */
+	width: max-content;
 	animation: marquee 10s linear infinite;
 }
 
 .player_link span {
 	display: inline-block;
-	padding-right: 10px; /* Space between repeated text */
+	padding-right: 10px;
 	white-space: nowrap;
 }
 
 .player_link span:hover {
-	animation-play-state: paused; /* Stop animation on hover */
+	animation-play-state: paused;
 	color: #fff;
 	text-align: center;
-	animation: glow 1s ease-in-out infinite alternate;
 }
 input[type='range'] {
 	-webkit-appearance: none;

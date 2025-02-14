@@ -32,7 +32,7 @@ const GridLayout: React.FC = () => {
 				<Text content={heading} />
 			</div>
 			<div className="grid_description" style={textStyles}>
-				<Text content={description} />
+				<Text content={description} className="glow" />
 			</div>
 
 			<div className="grid_socials">
