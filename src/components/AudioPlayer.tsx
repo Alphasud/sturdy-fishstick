@@ -20,6 +20,7 @@ const CustomAudioPlayer = () => {
 				audioRef.current.pause();
 			} else {
 				audioRef.current.play();
+				audioRef.current.volume = volume;
 			}
 			setIsPlaying(!isPlaying);
 		}
