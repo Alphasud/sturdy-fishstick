@@ -27,7 +27,7 @@ const IndexPage: React.FC<PageProps> = () => {
 	return (
 		<main style={pageStyles}>
 			<GhostTrailCursor />
-			<BackgroundNoise opacity={!loading ? 0.125 : 1} />
+			<BackgroundNoise opacity={!loading ? 0.15 : 1} />
 			<div
 				style={{
 					height: '100%',
