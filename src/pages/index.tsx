@@ -4,7 +4,6 @@ import BackgroundNoise from '../components/BackgroundNoise';
 import GridLayout from '../layout/GridLayout';
 import { TextProvider } from '../context/TextProvider';
 import GhostTrailCursor from '../components/GhostTrailCursor';
-import { StaticImage } from 'gatsby-plugin-image';
 
 const pageStyles: React.CSSProperties = {
 	width: '100%',
