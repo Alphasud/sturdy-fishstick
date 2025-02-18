@@ -13,16 +13,22 @@ const CursorTrail = () => {
 		const trailElements: SVGElement[] = [];
 
 		const handleMouseMove = (e: MouseEvent) => {
+			const target = e.target as HTMLElement;
+
+			// Disle cursor trail for elements with the class "no-cursor-trail"
+			if (target.closest('.no-cursor-trail')) return;
+
 			const trailElement = document.createElement('div');
 			trailElement.innerHTML = svgContent;
 			const svgElement = trailElement.firstChild as SVGElement;
 
 			svgElement.style.position = 'absolute';
-			svgElement.style.width = '23px';
-			svgElement.style.height = '23px';
+			svgElement.style.width = '18px';
+			svgElement.style.height = '18px';
 			svgElement.style.pointerEvents = 'none';
-			svgElement.style.left = `${e.pageX - 16}px`;
-			svgElement.style.top = `${e.pageY - 16}px`;
+			svgElement.style.left = `${e.pageX - 8}px`;
+			svgElement.style.top = `${e.pageY - 8}px`;
+			svgElement.style.rotate = '30deg';
 			svgElement.style.transition =
 				'opacity 0.5s ease-out, transform 0.2s ease-out';
 			svgElement.style.zIndex = '9999';

@@ -35,13 +35,13 @@ const GridLayout: React.FC = () => {
 				<Text content={description} className="glow" />
 			</div>
 
-			<div className="grid_socials">
+			<div className="grid_socials no-cursor-trail">
 				<Socials />
 			</div>
-			<div className="grid_audio_player">
+			<div className="grid_audio_player no-cursor-trail">
 				<AudioPlayer />
 			</div>
-			<div className="grid_footer">
+			<div className="grid_footer no-cursor-trail">
 				<Footer />
 			</div>
 		</div>
