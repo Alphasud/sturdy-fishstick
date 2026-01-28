@@ -3,7 +3,11 @@ import React from 'react';
 const Icons = () => {
 	return (
 		<div className="icons">
-			<a href="https://github.com/Alphasud" target="_blank">
+			<a
+				aria-label="GitHub"
+				href="https://github.com/Alphasud"
+				target="_blank"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
@@ -20,6 +24,7 @@ const Icons = () => {
 				</svg>
 			</a>
 			<a
+				aria-label="LinkedIn"
 				href="https://www.linkedin.com/in/charlesdenneulin/"
 				target="_blank"
 			>

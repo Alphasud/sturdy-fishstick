@@ -18,4 +18,10 @@ const NotFoundPage: React.FC<PageProps> = () => {
 
 export default NotFoundPage;
 
-export const Head: HeadFC = () => <title>😭 Not found</title>;
+export const Head: HeadFC = () => (
+	<>
+		<html lang="en" />
+		<title>404 - Not found</title>
+		<link rel="icon" href="/favicon_404.svg" type="image/svg+xml" />
+	</>
+);

@@ -43,4 +43,10 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>🌞 Charles Denneulin</title>;
+export const Head: HeadFC = () => (
+	<>
+		<html lang="en" />
+		<title>Charles Denneulin</title>
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+	</>
+);

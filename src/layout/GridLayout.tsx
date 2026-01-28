@@ -21,7 +21,7 @@ const GridLayout: React.FC = () => {
 			<div className="grid_background" style={backgroundStyles}>
 				<StaticImage
 					src="../images/computer.webp"
-					alt="a pixel art style drawing of a restro computer"
+					alt="a pixel art style drawing of a retro computer"
 					className="image"
 					layout="fullWidth"
 					loading="eager"

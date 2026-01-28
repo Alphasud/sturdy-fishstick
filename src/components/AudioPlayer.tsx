@@ -54,7 +54,11 @@ const CustomAudioPlayer = () => {
 					src="https://stream-mixtape-geo.ntslive.net/mixtape/64.aac"
 				/>
 
-				<button style={buttonStyles} onClick={togglePlay}>
+				<button
+					aria-label="Play/Pause"
+					style={buttonStyles}
+					onClick={togglePlay}
+				>
 					{isPlaying ? (
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +97,11 @@ const CustomAudioPlayer = () => {
 					<MarqueeLink title={player.title} link={player.link} />
 				</div>
 				<div style={{ display: 'flex', alignItems: 'center' }}>
-					<button style={buttonStyles} onClick={toggleSound}>
+					<button
+						aria-label="Toggle Sound"
+						style={buttonStyles}
+						onClick={toggleSound}
+					>
 						{volume === 0 ? (
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -131,6 +139,7 @@ const CustomAudioPlayer = () => {
 					</button>
 
 					<input
+						aria-label="Volume"
 						style={{ width: '5rem' }}
 						type="range"
 						min="0"
