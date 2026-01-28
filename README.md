@@ -7,6 +7,13 @@
   Gatsby Minimal TypeScript Starter
 </h1>
 
+## Welcome
+
+This is my personal website, designed as a simple online business card. It features:
+
+- A preconfigured radio player (streaming NTS’s Slow Focus infinite mixtape).
+- Quick links to my social platforms.
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**
@@ -34,7 +41,6 @@
     Edit `src/pages/index.tsx` to see your site update in real-time!
 
 4.  **Learn more**
-
     - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
     - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
     - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
