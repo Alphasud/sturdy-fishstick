@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Link, HeadFC, PageProps } from 'gatsby';
 import BackgroundNoise from '../components/BackgroundNoise';
 import GhostTrailCursor from '../components/GhostTrailCursor';
+import { useSiteMetadata } from '../hooks/useSiteMetadata';
 
 const NotFoundPage: React.FC<PageProps> = () => {
 	return (
@@ -18,10 +19,14 @@ const NotFoundPage: React.FC<PageProps> = () => {
 
 export default NotFoundPage;
 
-export const Head: HeadFC = () => (
-	<>
-		<html lang="en" />
-		<title>404 - Not found</title>
-		<link rel="icon" href="/favicon_404.svg" type="image/svg+xml" />
-	</>
-);
+export const Head: HeadFC = () => {
+	const { title } = useSiteMetadata();
+
+	return (
+		<>
+			<html lang="en" />
+			<title>{title} | Not found</title>
+			<link rel="icon" href="/favicon_404.svg" type="image/svg+xml" />
+		</>
+	);
+};

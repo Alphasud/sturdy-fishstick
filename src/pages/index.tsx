@@ -4,6 +4,7 @@ import BackgroundNoise from '../components/BackgroundNoise';
 import GridLayout from '../layout/GridLayout';
 import { TextProvider } from '../context/TextProvider';
 import GhostTrailCursor from '../components/GhostTrailCursor';
+import { useSiteMetadata } from '../hooks/useSiteMetadata';
 
 const pageStyles: React.CSSProperties = {
 	width: '100%',
@@ -43,10 +44,23 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => (
-	<>
-		<html lang="en" />
-		<title>Charles Denneulin</title>
-		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-	</>
-);
+export const Head: HeadFC = () => {
+	const { title, description, keywords, siteUrl, author } = useSiteMetadata();
+
+	return (
+		<>
+			<html lang="en" />
+			<title>{title}</title>
+			<meta name="description" content={description} />
+			<meta name="keywords" content={keywords.join(', ')} />
+			<meta name="author" content={author} />
+			<meta property="og:title" content={title} />
+			<meta property="og:description" content={description} />
+			<meta property="og:image" content={`${siteUrl}/favicon.svg`} />
+			<meta property="og:url" content={siteUrl} />
+			<meta property="og:type" content="website" />
+			<meta property="og:locale" content="en_US" />
+			<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+		</>
+	);
+};
